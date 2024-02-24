@@ -3,7 +3,7 @@ lenght.addEventListener("input",()=>{
     document.getElementById("lengthValue").innerText=lenght.value
 })
 document.getElementById("submit").onclick=function(){
-    let n=Math.floor(Math.random()*50);
+    let n=lenght.value
     const lowerchars='qwertyuiopasdfghjklzxcvbnm'
     const upperchars=lowerchars.toUpperCase()
     const numbers='1234567890'
@@ -19,5 +19,15 @@ document.getElementById("submit").onclick=function(){
     let special=specialsymbol[randomnumber(specialsymbol.length)]
     fullpassword+=x+y+z+special}
    fullpassword= fullpassword.slice(0,n)
-    console.log(fullpassword)
+    document.getElementById("result").value=fullpassword
+    document.getElementById("copy").innerText="Copy Text"
 }
+function copytext(){
+   const password= document.getElementById("result")
+  navigator.clipboard.writeText(password.value).then(
+    ()=>{
+        document.getElementById("copy").innerText="Text copied"
+    }
+  )
+}
+const copy=document.getElementById("copy").addEventListener("click",copytext)

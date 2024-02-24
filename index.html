@@ -6,10 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" readonly placeholder="Random Password">
-    <input type="button" value="Generate" id="submit">
-    <input type="range" min="5" max="50"  id="slider" >
-<p id="lengthValue"> </p>
+    <label for="slider">Password Lentght</label><br>
+    <p id="lengthValue"> </p>
+
+    <input type="range" min="5" max="50"  id="slider" ><br>
+    <input type="text"  id="result" readonly placeholder="Random Password">
+    <input type="button" value="Generate" id="submit"><br>
+    <button type="button"  id="copy">Copy Text</button>
+  
 <script src="index.js"></script>
 </body>
 </html>
